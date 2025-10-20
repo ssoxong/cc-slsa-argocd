@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ghcr.io/ssoxong/cc-slsa-argocd/slsa:sha-6b79dbbd19d80635477696d28f3b48329671a386
+          image: ghcr.io/ssoxong/cc-slsa-argocd/slsa:sha-04b1496097e9311eebff5a0d16a5e6b724533326
           ports:
             - containerPort: 8080
       imagePullSecrets:
