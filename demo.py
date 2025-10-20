@@ -5,7 +5,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")
         self.end_headers()
-        self.wfile.write(b"Hello, SLSA Level 3!")
+        self.wfile.write(b"Hello, SLSA Level week6!")
 
 if __name__ == "__main__":
     server_address = ("", 8080)
