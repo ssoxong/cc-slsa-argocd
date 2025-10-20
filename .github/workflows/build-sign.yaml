@@ -4,7 +4,6 @@ name: Build & Sign Image
 
 on:
   workflow_dispatch:
-
 jobs:
   build-sign:
     runs-on: ubuntu-latest
@@ -17,12 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ssoxong --password-stdin
 
       - name: Build Docker image
         run: |
-          IMAGE=ssoxong/slsa:sha-${{ github.sha }}
+          IMAGE=ghcr.io/ssoxong/cc-slsa-argocd/slsa:sha-${{ github.sha }}
           docker build -t $IMAGE .
           echo "IMAGE=$IMAGE" >> $GITHUB_ENV
 

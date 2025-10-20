@@ -1,5 +1,3 @@
-# verify-image-signature.yaml
-
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -15,8 +13,7 @@ spec:
             - Pod
       verifyImages:
         - imageReferences:
-            - "ssoxong/slsa*"
-            - "docker.io/ssoxong/slsa*"
+            - "ghcr.io/ssoxong/cc-slsa-argocd/slsa*"
           required: true
           verifyDigest: true
           attestors:
@@ -25,4 +22,4 @@ spec:
                     rekor:
                       url: https://rekor.sigstore.dev
                     issuer: "https://token.actions.githubusercontent.com"
-                    subject: "https://github.com/ssoxong/cc-slsa-argocd/.github/workflows/build-sign.yaml@refs/heads/main"
+                    subject: "https://github.com/ssoxong/cc-slsa-argocd/.github/workflows/build-sign-ghcr.yaml@refs/heads/main"
