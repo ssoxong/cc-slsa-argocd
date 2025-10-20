@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: ssoxong/slsa:sha-6b79dbbd19d80635477696d28f3b48329671a386
+          image: ssoxong/slsa
           ports:
             - containerPort: 8080 
